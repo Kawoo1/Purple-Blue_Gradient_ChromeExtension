@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       const activeTab = tabs[0];
       chrome.runtime.sendMessage({ tabId: activeTab.id, action: "applyGradient" }, function(response) {
-        if (response === 'success') {
-          console.log('Gradient applied.');
+        if (response && response.message === 'Gradient applied successfully') {
+          console.log('Gradient applied successfully.');
+        } else {
+          console.error('Failed to apply the gradient.');
         }
       });
     });
