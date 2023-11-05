@@ -10,5 +10,6 @@ Each file and its purposes are explained below:
 4) popup.js - The most active file. This javascript file allows the extension to have its interactive properties, without it, the entire project just kind of sits and looks *pretty*
    The file is short and thats because it has one purpose, to handle the button click event. Without triggering the event, there is no gradient. When the event is triggered by the
    user, the gradient is applied. Simple enough.
+5) background.js - Deals with message passing and works in tangent with "popup.js" in the background without actually having to be called or referenced within the popup.html
 
 This is the full extent of the chrome extension.
