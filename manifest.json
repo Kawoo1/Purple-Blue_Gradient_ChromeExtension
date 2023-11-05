@@ -1,17 +1,16 @@
 {
   "manifest_version": 3,
   "name": "Purple Blue Gradient",
-  "version": "1.0",
+  "version": "1.3",
   "description": "Changes the browser background to a purple and blue gradient.",
-  "permissions": ["activeTab"],
+  "permissions": [
+    "activeTab"
+  ],
   "background": {
+    "service_worker": "background.js",
     "page": "background.html"
+    
   },
-
-  "background": {
-    "service_worker": "background.js"
-  },
-  
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
