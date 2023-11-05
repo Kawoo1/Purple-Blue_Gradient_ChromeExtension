@@ -5,8 +5,13 @@
   "description": "Changes the browser background to a purple and blue gradient.",
   "permissions": ["activeTab"],
   "background": {
+    "page": "background.html"
+  },
+
+  "background": {
     "service_worker": "background.js"
   },
+  
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
