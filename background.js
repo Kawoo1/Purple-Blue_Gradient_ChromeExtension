@@ -1,11 +1,10 @@
 //This javascript file handles message passing.
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.action === "applyGradient") {
-      chrome.scripting.executeScript({
-        target: { tabId: request.tabId },
-        function: applyGradient
-      });
-    }
+//Updated to properly use the chrome.scripting API
+chrome.action.onClicked.addListener((tab) => {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: applyGradient
+    });
   });
   
   function applyGradient() {
