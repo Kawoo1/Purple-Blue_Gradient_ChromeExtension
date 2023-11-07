@@ -11,11 +11,10 @@ chrome.runtime.onInstalled.addListener(function() {
   function applyGradient() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       const activeTab = tabs[0];
-      chrome.scripting.executeScript({
-        target: { tabId: activeTab.id },
-        function: () => {
+      chrome.tabs.executeScript(activeTab.id, {
+        code: `
           document.body.style.background = 'linear-gradient(to bottom, #8E44AD, #3498DB)';
-        }
+        `
       });
     });
   }
