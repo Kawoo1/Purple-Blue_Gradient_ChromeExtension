@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       const activeTab = tabs[0];
       chrome.runtime.sendMessage({ tabId: activeTab.id, action: "applyGradient" }, function(response) {
+        //Error check. If the gradient is applied correctly, console response that it passed. else, passes a console reponse that the gradient application failed.
         if (response && response.message === 'Gradient applied successfully') {
           console.log('Gradient applied successfully.');
         } else {
